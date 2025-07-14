@@ -59,20 +59,24 @@ namespace MisterManager
             string menu_repo    = base_repo + "Menu_MiSTer/contents/releases"; string menu_dl   = base_dl + "Menu_MiSTer/master/releases/menu_";
 
             //Setting Console cores URL
-            string a5200_repo   = base_repo + "Atari800_MiSTer/contents/releases";      string a5200_dl = base_dl + "Atari800_MiSTer/master/releases/Atari800_";
-            string a2600_repo   = base_repo + "Atari2600_MiSTer/contents/releases";     string a2600_dl = base_dl + "Atari2600_MiSTer/master/releases/Atari2600_";
-            string col_repo     = base_repo + "ColecoVision_MiSTer/contents/releases";  string col_dl   = base_dl + "ColecoVision_MiSTer/master/releases/ColecoVision_";
-            string gb_repo      = base_repo + "Gameboy_MiSTer/contents/releases";       string gb_dl    = base_dl + "Gameboy_MiSTer/master/releases/Gameboy_";
-            string gba_repo     = base_repo + "GBA_MiSTer/contents/releases";           string gba_dl   = base_dl + "GBA_MiSTer/master/releases/GBA_";
-            string gen_repo     = base_repo + "Genesis_MiSTer/contents/releases";       string gen_dl   = base_dl + "Genesis_MiSTer/master/releases/Genesis_";
-            string sms_repo     = base_repo + "SMS_MiSTer/contents/releases";           string sms_dl   = base_dl + "SMS_MiSTer/master/releases/SMS_";
-            string mcd_repo     = base_repo + "MegaCD_MiSTer/contents/releases";        string mcd_dl   = base_dl + "MegaCD_MiSTer/master/releases/MegaCD_";
-            string ng_repo      = base_repo + "NeoGeo_MiSTer/contents/releases";        string ng_dl    = base_dl + "NeoGeo_MiSTer/master/releases/NeoGeo_";
-            string nes_repo     = base_repo + "NES_MiSTer/contents/releases";           string nes_dl   = base_dl + "NES_MiSTer/master/releases/NES_";
-            string snes_repo    = base_repo + "SNES_MiSTer/contents/releases";          string snes_dl  = base_dl + "SNES_MiSTer/master/releases/SNES_";
-            string pce_repo     = base_repo + "TurboGrafx16_MiSTer/contents/releases";  string pce_dl   = base_dl + "TurboGrafx16_MiSTer/master/releases/TurboGrafx16_";
-            string vec_repo     = base_repo + "Vectrex_MiSTer/contents/releases";       string vec_dl   = base_dl + "Vectrex_MiSTer/master/releases/Vectrex_";
-
+            string a7800_repo   = base_repo + "Atari7800_MiSTer/contents/releases";     string a7800_dl  = base_dl + "Atari7800_MiSTer/master/releases/Atari7800_";
+            string col_repo     = base_repo + "ColecoVision_MiSTer/contents/releases";  string col_dl    = base_dl + "ColecoVision_MiSTer/master/releases/ColecoVision_";
+            string cdi_repo     = base_repo + "CDi_MiSTer/contents/releases";           string cdi_dl    = base_dl + "CDi_MiSTer/master/releases/CDi_";
+            string gb_repo      = base_repo + "Gameboy_MiSTer/contents/releases";       string gb_dl     = base_dl + "Gameboy_MiSTer/master/releases/Gameboy_";
+            string gba_repo     = base_repo + "GBA_MiSTer/contents/releases";           string gba_dl    = base_dl + "GBA_MiSTer/master/releases/GBA_";
+            string gen_repo     = base_repo + "Genesis_MiSTer/contents/releases";       string gen_dl    = base_dl + "Genesis_MiSTer/master/releases/Genesis_";
+            string sms_repo     = base_repo + "SMS_MiSTer/contents/releases";           string sms_dl    = base_dl + "SMS_MiSTer/master/releases/SMS_";
+            string mcd_repo     = base_repo + "MegaCD_MiSTer/contents/releases";        string mcd_dl    = base_dl + "MegaCD_MiSTer/master/releases/MegaCD_";
+            string ng_repo      = base_repo + "NeoGeo_MiSTer/contents/releases";        string ng_dl     = base_dl + "NeoGeo_MiSTer/master/releases/NeoGeo_";
+            string nes_repo     = base_repo + "NES_MiSTer/contents/releases";           string nes_dl    = base_dl + "NES_MiSTer/master/releases/NES_";
+            string n64_repo     = base_repo + "N64_MiSTer/contents/releases";           string n64_dl    = base_dl + "N64_MiSTer/master/releases/N64_";      
+            string snes_repo    = base_repo + "SNES_MiSTer/contents/releases";          string snes_dl   = base_dl + "SNES_MiSTer/master/releases/SNES_";
+            string pce_repo     = base_repo + "TurboGrafx16_MiSTer/contents/releases";  string pce_dl    = base_dl + "TurboGrafx16_MiSTer/master/releases/TurboGrafx16_";
+            string vec_repo     = base_repo + "Vectrex_MiSTer/contents/releases";       string vec_dl    = base_dl + "Vectrex_MiSTer/master/releases/Vectrex_";
+            string s32x_repo    = base_repo + "S32X_MiSTer/contents/releases";          string s32x_dl   = base_dl + "S32X_MiSTer/master/releases/S32X_";
+            string saturn_repo  = base_repo + "Saturn_MiSTer/contents/releases";        string saturn_dl = base_dl + "Saturn_MiSTer/master/releases/Saturn_";
+            string sps_repo     = base_repo + "PSX_MiSTer/contents/releases";           string sps_dl    = base_dl + "PSX_MiSTer/master/releases/PSX_";
+            string ws_repo      = base_repo + "WonderSwan_MiSTer/contents/releases";    string ws_dl     = base_dl + "WonderSwan_MiSTer/master/releases/WonderSwan_";
 
             /////////////////////////////////
             //Checking the latest version of Mister and Menu if the checkboxes are checked
@@ -87,12 +91,9 @@ namespace MisterManager
             /////////////////////////////////
             //Checking the latest version of the Console cores if the checkboxes are checked
             /////////////////////////////////////////////////////////
-            if (cb_a5200.Checked){ core_latest = Worker.GetLatestCoreDate(a5200_repo);
-                Worker.GetFile(a5200_dl + core_latest + ".rbf", folder_dl + "Atari800_" + core_latest + ".rbf");
-            }
 
-            if (cb_a2600.Checked){ core_latest = Worker.GetLatestCoreDate(a2600_repo);
-                Worker.GetFile(a2600_dl + core_latest + ".rbf", folder_dl + "Atari2600_" + core_latest + ".rbf");
+            if (cb_a7800.Checked){ core_latest = Worker.GetLatestCoreDate(a7800_repo);
+                Worker.GetFile(a7800_dl + core_latest + ".rbf", folder_dl + "Atari7800_" + core_latest + ".rbf");
             }
 
             if (cb_col.Checked){ core_latest = Worker.GetLatestCoreDate(col_repo);
@@ -139,6 +140,36 @@ namespace MisterManager
                 Worker.GetFile(vec_dl + core_latest + ".rbf", folder_dl + "Vectrex_" + core_latest + ".rbf");
             }
 
+            if (cb_s32x.Checked){ core_latest = Worker.GetLatestCoreDate(s32x_repo);
+                Worker.GetFile(s32x_dl + core_latest + ".rbf", folder_dl + "S32X_" + core_latest + ".rbf");
+            }
+
+            if (cb_sps.Checked) { core_latest = Worker.GetLatestCoreDate(sps_repo);
+                Worker.GetFile(sps_dl + core_latest + ".rbf", folder_dl + "PSX_" + core_latest + ".rbf");
+            }
+
+            if (cb_ss.Checked)
+            {
+                core_latest = Worker.GetLatestCoreDate(saturn_repo);
+                Worker.GetFile(saturn_dl + core_latest + ".rbf", folder_dl + "Saturn_" + core_latest + ".rbf");
+            }
+
+            if (cb_ws.Checked) { core_latest = Worker.GetLatestCoreDate(ws_repo);
+                Worker.GetFile(ws_dl + core_latest + ".rbf", folder_dl + "WonderSwan_" + core_latest + ".rbf");
+            }
+
+            if (cb_cdi.Checked)
+            {
+                core_latest = Worker.GetLatestCoreDate(cdi_repo);
+                Worker.GetFile(cdi_dl + core_latest + ".rbf", folder_dl + "CDi_" + core_latest + ".rbf");
+            }
+
+            if (cb_n64.Checked)
+            {
+                core_latest = Worker.GetLatestCoreDate(n64_repo);
+                Worker.GetFile(n64_dl + core_latest + ".rbf", folder_dl + "N64_" + core_latest + ".rbf");
+            }
+
             MessageBox.Show("Download Successful!","Downloader",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
@@ -173,6 +204,56 @@ namespace MisterManager
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/kaz-san");
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_sps_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_a2600_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_col_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_gb_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_gba_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_gen_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_mcd_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
